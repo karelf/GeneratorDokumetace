@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.11" 
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
-		   
+           xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.11/cms-2.11.xsd"
              version="1.0">
-    <!-- Basic authoring details -->
+
+<!-- 2.11 nové číslování v SDR dáse dát název zákazníka, je to možnost, nemusí být -->
+		   <!-- Basic authoring details -->
     <cms:author>Probe Team</cms:author>
    <!--  <cms:contact>qmpa@anritsu.com</cms:contact>  non official adress -->
    <!-- <cms:contact>SBU6R&DProbeSupport@anritsu.com</cms:contact>  OFFICIAL adress -->
@@ -30,7 +31,7 @@
     <!-- Release details -->
     <cms:release-name>probe-sims</cms:release-name>
     <cms:release-long-name>Long name release</cms:release-long-name>
-    <cms:release-version>6.6.6</cms:release-version> <!-- @project.version@ -->
+    <cms:release-version>1.1.0-0.1DTAG</cms:release-version> <!-- @project.version@ -->
     
     
 <!-- ****************************************************** -->
@@ -281,11 +282,12 @@
 			<cms:global>
 				<cms:package>probe-sims package for Linux platform Global 1 1</cms:package>
 				<cms:mc-version>7.1</cms:mc-version>
-				<cms:level>GCA</cms:level>
+				<cms:level>SDR</cms:level>
 				<cms:risk>Low</cms:risk>
+				
 			 <!--  reason, custumers, note  not blank, if blank - release portal syntax OK but not see any value
                  <cms:reason>Reason</cms:reason>
-                 <cms:customers></cms:customers>
+                 <cms:customers>DTAG</cms:customers>
                  <cms:note>Global 1 1</cms:note>
 			  -->
 			</cms:global>
