@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    A release represents the act of exposing component to the public.
+    The release describes basic informations (who did it, when, why),
+    and the details of the single  'Part Release's the release comprises.
+-->
+<cms:release xmlns:cms="http://www.anritsu.com/CMS/2.10"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.anritsu.com/CMS/2.10 http://rdstorage/artifactory/repo/com/anritsu/cms/2.10/cms-2.10.xsd"
+             version="1.0">
+    <!-- Basic authoring details -->
+    <cms:author>Probe Team</cms:author>
+    <cms:contact>QMPA@anritsu.com</cms:contact>
+
+    <cms:date>@timestamp@</cms:date>
+        <!-- @timestamp@ and time format fo manual settings 2017-08-23T12:01:50Z  -->
+
+    <cms:tier>Anritsu/MasterClaw/Acquisition</cms:tier>
+    <cms:group>Probe</cms:group>
+    <cms:arch>x86_64</cms:arch>
+
+    <!-- version release @project.verison@ -->
+
+    <!-- The list of distribution mailing list.-->
+    <cms:distribution-list type="DEVELOP">_EU-GL M4 Engineering Developer Releases</cms:distribution-list>
+    <cms:distribution-list type="RELEASE">_EU-GL M4 Engineering Releases</cms:distribution-list>
+
+    <!-- Release details -->
+    <cms:release-name>scanning-module</cms:release-name>
+    <cms:release-version>@project.version@</cms:release-version>
+
+    <!-- List of item releases -->
+    <cms:item>
+        <cms:name>scanning-module-@project.version@.x86_64.rpm</cms:name>
+        <cms:description>Deployment package for Linux</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/scanning-module/sdr</cms:location>
+    </cms:item>
+
+    <cms:item>
+        <cms:name>scanning-module-@project.version@.md5sum</cms:name>
+        <cms:description>Checksum file</cms:description>
+        <cms:location>http://utmnnfs/quest7-packages/scanning-module/sdr</cms:location>
+    </cms:item>
+
+    <!-- Precautions for this release -->
+    <!--  <cms:precaution>ECR 2035 is turned off by default, see Release Notes for configuration</cms:precaution> -->
+    <!-- <cms:precaution>PDP 138 is turned off by default, see Release Notes for configuration</cms:precaution> -->
+    <cms:precaution>Please do not install this version at customer production env</cms:precaution>
+    <cms:precaution>This is only SDR version for testing of autoconf phase 3</cms:precaution>
+    <cms:precaution>For test please use probe-conf 6.5.0+ and deploy-server-7.0.0+</cms:precaution>
+
+    <!--
+        A part-release identifies a piece of what we are release today in this XML.
+    -->
+
+    <cms:part-release>
+        <!--NEW, UPDATE, CANCEL -->
+        <cms:status>NEW</cms:status>
+
+        <!-- Purpose values can be:
+           <Empty>->the purpose will be calculated from activities.
+            Bug Fixing
+            New Features
+            Bug Fixing and New Features
+        -->
+        <cms:purpose />
+
+        <!--
+            Declare the baselines the part release works on
+        -->
+        <cms:baseline>MasterClaw 8.0</cms:baseline>
+        <cms:test-level>1</cms:test-level>
+	   
+        <cms:reference type="STR" name="System Test Report" docName="scanning-module-@project.version@-str-v1.doc"
+            uri="http://utmnnfs/quest7-packages/scanning-module/sdr" />
+        <cms:reference type="STS" name="System Test Specification" docName=""
+            uri="http://rddoc/rddoc" />
+        <cms:reference type="MANUAL" name="Probes Installation and Configuration Manual" docName=""
+            uri="http://sharepoint.eu.anritsu.com/sites/M4/Engineering/MasterClaw User Documentation/Forms/MasterClaw_8.0.aspx" />
+        <cms:reference type="RN" name="Release Notes" docName="scanning-module-@project.version@-rn-v1.doc"
+            uri="http://utmnnfs/quest7-packages/scanning-module/sdr" />
+        <cms:reference type="QBASE" name="Deployment package for Linux" docName="scanning-module-@project.version@.x86_64.rpm"
+            uri="http://utmnnfs/quest7-packages/scanning-module/sdr" />
+
+        <cms:availabilities>
+            <cms:global>
+                <cms:package>scanning-module package for Linux platform</cms:package>
+                <cms:mc-version>8.0</cms:mc-version>
+                <cms:level>SDR</cms:level>
+                <cms:risk>High</cms:risk>
+            </cms:global>
+
+            <!-- feature availability, leave in template for future use -->
+            <!--
+            <cms:feature>
+                <cms:name>ECR 2272</cms:name>
+                <cms:mc-version>8.0</cms:mc-version>
+                <cms:level>TQR</cms:level>
+                <cms:risk>High</cms:risk>
+                <cms:reason>Requires further testing</cms:reason>
+                <cms:customers></cms:customers>
+                <cms:description>Probe persistency update</cms:description>
+            </cms:feature>
+		  <cms:other>
+                <cms:name>Other availability type</cms:name>
+                <cms:mc-version>8.0</cms:mc-version>
+                <cms:level>TQR</cms:level>
+                <cms:description>Other avalability type description 1 sekce</cms:description>
+                <cms:risk>High</cms:risk>
+                <cms:customers></cms:customers>
+            </cms:other>
+            -->
+
+        </cms:availabilities>
+        <cms:dependencies mc-version="8.0">
+            <!-- Platform dependency -->
+            <cms:platform-dependency>
+                <cms:component>CentOS7-x86_64</cms:component>
+                <cms:required-version>7.0+</cms:required-version>
+                <cms:tested-version>7.0.7</cms:tested-version>
+                <cms:description>Base OS services (for full functionality including x-commands the ssh server must be installed and running as well)</cms:description>
+                <cms:license uri="http://www.gnu.org/copyleft/gpl.html">7.1 GPL v2</cms:license>
+            </cms:platform-dependency>
+
+            <!-- Third Party dependency -->
+            <cms:third-part-dependency>
+                <cms:component>CentOS-RHEL_FBC</cms:component>
+                <cms:required-version>2.1.3</cms:required-version>
+                <cms:tested-version>2.1.3</cms:tested-version>
+                <cms:description>Needed for FBC usage</cms:description>
+                <cms:license />
+            </cms:third-part-dependency>
+	       <cms:third-part-dependency>
+                <cms:component>DPDK</cms:component>
+                <cms:required-version>Any</cms:required-version>
+                <cms:tested-version>17.02</cms:tested-version>
+                <cms:description>Libraries and drivers for fast packet processing</cms:description>
+                <cms:license uri="https://opensource.org/licenses/BSD-3-Clause">BSD 3</cms:license>
+            </cms:third-part-dependency>
+            <cms:third-part-dependency>
+                <cms:component>google protobufs</cms:component>
+                <cms:required-version>3.5.0+</cms:required-version>
+                <cms:tested-version>3.5.0</cms:tested-version>
+                <cms:description>Mechanism for serializing structured data</cms:description>
+               <cms:license uri="https://github.com/google/protobuf/blob/master/LICENSE"></cms:license>
+            </cms:third-part-dependency>
+		  <cms:third-part-dependency>
+                <cms:component>Kernel driver</cms:component>
+                <cms:required-version></cms:required-version>
+                <cms:tested-version></cms:tested-version>
+                <cms:description></cms:description>
+                <cms:license uri="http://www.gnu.org/copyleft/gpl.html">GPL v3</cms:license>
+            </cms:third-part-dependency>
+		  <cms:third-part-dependency>
+                <cms:component>gRPC</cms:component>
+                <cms:required-version>1.6.6</cms:required-version>
+                <cms:tested-version>1.6.6</cms:tested-version>
+                <cms:description>Remote Procedure Call protobuf extension</cms:description>
+                <cms:license uri="https://github.com/google/protobuf/blob/master/LICENSE"></cms:license>
+            </cms:third-part-dependency>
+            
+
+            <!-- Local dependency -->
+            <cms:local-dependency>
+                <cms:component>probe-conf</cms:component>
+                <cms:required-version>6.5.0+</cms:required-version>
+                <cms:tested-version>6.5.0.100</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration data for MC</cms:description>
+            </cms:local-dependency>
+
+            <cms:local-dependency>
+                <cms:component>deploy-server</cms:component>
+                <cms:required-version>7.0.0+</cms:required-version>
+                <cms:tested-version>7.0.0.88</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration software for MC</cms:description>
+            </cms:local-dependency>
+
+            <cms:local-dependency>
+                <cms:component>configtool</cms:component>
+                <cms:required-version>6.0.0+</cms:required-version>
+                <cms:tested-version>6.1.0</cms:tested-version>
+                <cms:required>No</cms:required>
+                <cms:description>Configuration software for MC</cms:description>
+            </cms:local-dependency>
+        </cms:dependencies>
+
+        <!-- current release, must be first for generated mail to work!!! -->
+        <cms:activities released-in-version="@project.version@">
+            <cms:enh type="PDP" id="121" uri="" availability="SDR">Autoconfig phase 3</cms:enh>
+        </cms:activities>
+
+        <!--  must not be first, because first "activities" is used by script as "CurrentReleaseActivities" in mail -->
+        <!-- current precautions (non fatal) -->
+        <!--
+        <cms:activities released-in-version="NOT_FIXED">
+        </cms:activities>
+        -->
+
+        <!-- NOT FIXED FATAL current precautions (fatal)  -->
+        <!--
+        <cms:activities released-in-version="NOT_FIXED_FATAL">
+        </cms:activities>
+        -->
+
+        <!-- old releases -->
+
+    </cms:part-release>
+
+<!-- template for ECR; EPR; PDP; TASK
+            <cms:activities released-in-version="TEST">
+                <cms:epr id="46311" uri="http://sbu6rdbug/bugzilla/show_bug.cgi?id=46311">TEST EPR</cms:epr>
+                <cms:enh type="ECR" uri="http//" availability="GCA" id="2039">TEST ECR</cms:enh>
+                <cms:enh type="TASK" uri="http//" availability="TQR" id="Fiberblaze SW 2.4.4.1">TEST TASK</cms:enh>
+                <cms:enh type="PDP" uri="http//" availability="FCA" id="115">TEST PSP</cms:enh>
+            </cms:activities>
+-->
+
+</cms:release>
