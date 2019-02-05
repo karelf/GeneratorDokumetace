@@ -5,7 +5,7 @@
                 <cms:component>CentOS6.4_x86_64</cms:component>
                 <cms:required-version>6.4+</cms:required-version>
                 <cms:tested-version>6.4 (64b)</cms:tested-version>
-                <cms:description>Platform depemdency 1 MC 7.1</cms:description>
+                <cms:description>Platform dependency 1 MC 7.1</cms:description>
                 <cms:license>GPL v2 http://www.gnu.org/copyleft/gpl.html</cms:license>
             </cms:platform-dependency>
             <cms:platform-dependency>
@@ -130,7 +130,7 @@
                <cms:description>Compression library</cms:description>
                <cms:license>Free license for zlib https://www.zlib.net/zlib_license.html</cms:license>
 		</cms:third-part-dependency>
-	<!-- 3rd part depemdency STOP qmpa5 MC 7.1 -->
+	<!-- 3rd part dependency STOP qmpa5 MC 7.1 -->
 	<!-- 3rd part dependency probe-sims START -->
 		<cms:third-part-dependency> 
                <cms:component>ASN.1 Compiler </cms:component>
@@ -217,8 +217,8 @@
                <cms:license>Free license for zlib https://www.zlib.net/zlib_license.html</cms:license>
           </cms:third-part-dependency>
 		
-	<!-- 3rd part depemdency STOP probe-sims MC 7.1 -->
-	<!-- 3rd part depemdency START INFOSERVER MC 7.1 -->
+	<!-- 3rd part dependency STOP probe-sims MC 7.1 -->
+	<!-- 3rd part dependency START INFOSERVER MC 7.1 -->
 		<cms:third-part-dependency> 
                <cms:component>google protobufs</cms:component>
                <cms:required-version>2.5.0+</cms:required-version>
@@ -226,7 +226,7 @@
                <cms:description>Mechanism for serializing structured data </cms:description>
                <cms:license>https://github.com/google/protobuf/blob/master/LICENSE</cms:license>
           </cms:third-part-dependency>
-<!-- 3rd part depemdency STOP INFOSERVER MC 7.1 -->		
+<!-- 3rd part dependency STOP INFOSERVER MC 7.1 -->		
     <!-- Local dependency -->
             <cms:local-dependency>
                 <cms:component>configtool</cms:component>

@@ -5,7 +5,7 @@
     Copyright 2014 Anritsu. All rights reserved.
 -->
 <xsd:schema xmlns:cms="http://www.anritsu.com/CMS/2.10" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.anritsu.com/CMS/2.10" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <!--  
+    <!--
         A release represents the act of exposing one or more components to
         the public.
         The release describes basic informations (who did it, when, why),
